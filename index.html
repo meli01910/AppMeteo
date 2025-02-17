@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌤️ Application Météo avec Prévisions</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- Chart.js -->
+</head>
+
+<body class="light-mode"> <!-- Mode clair par défaut -->
+    <!-- Bouton de bascule pour le mode clair/sombre -->
+    <div class="theme-toggle">
+        <button id="toggle-theme">🌙 Mode Sombre</button>
+    </div>
+    <div class="container">
+        <h1>🌤️ Application Météo avec Prévisions</h1>
+
+        <!-- Groupe de saisie et boutons -->
+        <div class="input-group">
+            <button onclick="getLocation()">📍 Utiliser ma position</button>
+            <input type="text" id="city" placeholder="Entrez une ville">
+            <button onclick="getWeatherByCity()">🔍 Rechercher</button>
+        </div>
+
+        <!-- Section météo du jour -->
+        <div id="weather">
+            <!-- Le contenu météo sera injecté ici par JavaScript -->
+        </div>
+
+        <div class="forecast-chart-container">
+            <!-- Prévisions sur 3 jours -->
+            <div id="forecast">
+                <!-- Les prévisions seront injectées ici par JavaScript -->
+            </div>
+        
+            <!-- Graphique des prévisions -->
+            <div class="chart-container">
+                <canvas id="weatherChart"></canvas>
+            </div>
+        </div>
+
+        <footer>
+            <p>Données météo fournies par <a href="https://www.weatherapi.com/" target="_blank">WeatherAPI.com</a></p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
